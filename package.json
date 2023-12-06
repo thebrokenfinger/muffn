@@ -1,0 +1,62 @@
+{
+  "name": "muffn",
+  "version": "0.1.0",
+  "description": "Tiny template engine for baking HTML in the browser and on the server",
+  "module": "dist/muffn.mjs",
+  "main": "dist/muffn.js",
+  "umd:main": "dist/muffn.umd.js",
+  "source": "src/index.ts",
+  "exports": {
+    "module": "./dist/muffn.mjs",
+    "import": "./dist/muffn.mjs",
+    "require": "./dist/muffn.js",
+    "default": "./dist/muffn.mjs"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "test": "mocha",
+    "typecheck": "tsc --noEmit",
+    "bundle": "microbundle -f es,cjs,umd"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "muffn",
+    "tiny",
+    "template",
+    "engine",
+    "html",
+    "browser"
+  ],
+  "author": "Yatharth K",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "chai": "^4.3.10",
+    "esm": "^3.2.25",
+    "microbundle": "^0.15.1",
+    "mocha": "^10.2.0",
+    "prettier": "^3.1.0",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2"
+  },
+  "mocha": {
+    "extension": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register",
+      "esm"
+    ],
+    "spec": [
+      "test/*.ts"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "none"
+  }
+}
