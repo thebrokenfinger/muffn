@@ -16,7 +16,8 @@
     "clean": "rimraf dist",
     "test": "mocha",
     "typecheck": "tsc --noEmit",
-    "bundle": "microbundle -f es,cjs,umd"
+    "bundle": "microbundle -f es,cjs,umd",
+    "release": "npm run test && npm run bundle && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "files": [
     "dist"
